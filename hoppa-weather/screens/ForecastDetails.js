@@ -7,7 +7,7 @@ function ForecastDetails (props) {
 
   return (
     <View style={styles.container}>
-      <Image source={{ uri: route.params.day.condition.icon }} resizeMode='cover' style={styles.image} />
+      <Image source={{ uri: `https:${route.params.day.condition.icon}` }} resizeMode='contain' style={styles.image} />
       <View style={styles.textContainer}>
         <Text style={styles.conditionText}>{route.params.day.condition.text}</Text>
         <View style={styles.subText}>
@@ -31,8 +31,7 @@ const styles = StyleSheet.create({
   },
   image: {
     height: 150,
-    width: 150,
-    backgroundColor: 'grey'
+    width: 150
   },
   textContainer: {
     justifyContent: 'center',

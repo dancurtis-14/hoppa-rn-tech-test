@@ -1,5 +1,6 @@
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native'
 import Day from 'dayjs'
+import { useEffect } from 'react'
 
 function ForecastCard (props) {
   const {
@@ -15,12 +16,16 @@ function ForecastCard (props) {
     })
   }
 
+  useEffect(() => {
+    console.log(day.condition.icon)
+  }, [])
+
   return (
     <Pressable
       onPress={navigate}
     >
       <View style={styles.container}>
-        <Image source={{ uri: day.condition.icon }} resizeMode='cover' style={styles.image} />
+        <Image source={{ uri: `https:${day.condition.icon}` }} resizeMode='cover' style={styles.image} />
         <View style={styles.conditionContainer}>
           <Text style={styles.conditionText}>{day.condition.text}</Text>
           <View style={styles.tempContainer}>
@@ -49,8 +54,7 @@ const styles = StyleSheet.create({
   },
   image: {
     height: 64,
-    width: 64,
-    backgroundColor: 'grey'
+    width: 64
   },
   conditionContainer: {
     flex: 1,
