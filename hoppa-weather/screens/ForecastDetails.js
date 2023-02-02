@@ -1,14 +1,9 @@
-import { useEffect } from 'react'
 import { Image, StyleSheet, Text, View } from 'react-native'
 
 function ForecastDetails (props) {
   const {
     route
   } = props
-
-  useEffect(() => {
-    console.log(route.params.day.condition.icon)
-  }, [])
 
   return (
     <View style={styles.container}>
