@@ -1,6 +1,5 @@
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native'
 import Day from 'dayjs'
-import { useEffect } from 'react'
 
 function ForecastCard (props) {
   const {
@@ -15,10 +14,6 @@ function ForecastCard (props) {
       date: Day(date).format('D MMMM YYYY')
     })
   }
-
-  useEffect(() => {
-    console.log(day.condition.icon)
-  }, [])
 
   return (
     <Pressable
